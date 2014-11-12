@@ -23,7 +23,7 @@ var io = require('socket.io').listen(server);
 app.use(logger('dev'));
  
 // listen on port 1234
-app.listen(1234);
+server.listen(1234);
  
 
 files.forEach(function(filename){
@@ -31,7 +31,7 @@ files.forEach(function(filename){
       // display an update was made, then console.log the new updated file!
       fs.readFile(filename, function(err,data) {
         io.sockets.emit("filechanged", { filename: filename, filetext: data.toString() });
-        console.log({ filename: filename, filetext: data.toString() })
+        console.log("we changed a file");
     });
   })
 });

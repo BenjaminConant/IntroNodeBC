@@ -47,7 +47,7 @@ $(document).ready(function() {
   // when 'filechanged' events are fired, take our fileobj object and do something with it
   socket.on('filechanged', function (fileobj) { 
     console.log(fileobj);
-    alert('Refreshing... check the console...');
+    // alert('Refreshing... check the console...');
     // window.location.reload() is a simple way to refresh the page
     window.location.reload();
   });
